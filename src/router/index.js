@@ -3,11 +3,21 @@ import ContactBook from '@/views/ContactBook.vue';
 
 const routes = [
     {
+        path: '/contact/:id', 
+        name: 'contact.edit', 
+        component: () => import('@/views/ContactEdit.vue'),
+        props: true
+    },
+    {
         path: '/:pathMatch(.*)*',
         name: 'not-found',
         component: () => import('@/views/NotFound.vue'),
     },
-    { path: '/', name: 'contactbook', component: ContactBook },
+    { 
+        path: '/', 
+        name: 'contactbook', 
+        component: ContactBook 
+    },
 ];
 
 const router = createRouter({
