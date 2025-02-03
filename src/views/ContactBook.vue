@@ -56,7 +56,7 @@ export default {
       this.activeIndex = -1;
     },
     async removeAllContacts() {
-      if (!confirm("Bạn có chắc chắn muốn xóa tất cả liên hệ không?")) {
+      if (confirm("Bạn có chắc chắn muốn xóa tất cả liên hệ không?")) {
         try {
           await ContactService.deleteAll();
           this.refreshList();
